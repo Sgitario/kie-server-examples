@@ -1,11 +1,10 @@
 # A scrape configuration containing exactly one endpoint to scrape:
 scrape_configs:
-  # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
   - job_name: 'kie-server'
 
     scrape_interval: 10s
 
-    metrics_path: /kie-server/services/rest/metrics
+    metrics_path: /services/rest/metrics
 
     basic_auth:
       username: 'admin'
@@ -13,5 +12,3 @@ scrape_configs:
 
     static_configs:
       - targets: ['kieserver:8080']
-
-      # - targets: ['host.docker.internal:8080']
